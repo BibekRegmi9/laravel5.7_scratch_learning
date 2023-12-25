@@ -16,25 +16,36 @@
 //Route::get('/contact', 'PagesController@contact');
 
 // to get all projects
-Route::get('/projects', 'ProjectsController@index');
+//Route::get('/projects', 'ProjectsController@index');
 
 // to get individual projects
-Route::get('/projects/{id}', 'ProjectsController@show');
+//Route::get('/projects/{id}', 'ProjectsController@show');
 
 // to get the view i.e. form. The form will have the post method to submit the form in to the below post route
-Route::get('/projects/create', 'ProjectsController@create');
+//Route::get('/projects/create', 'ProjectsController@create');
 
 // to store the projects
-Route::post('/projects', 'ProjectsController@store');
+//Route::post('/projects', 'ProjectsController@store');
 
 // to edit the projects
-Route::get('/projects/{id}/edit', 'ProjectsController@edit');
+//Route::get('/projects/{id}/edit', 'ProjectsController@edit');
 // to update the edited project
-Route::patch('/projects/{id}', 'ProjectsController@update');
+//Route::patch('/projects/{id}', 'ProjectsController@update');
 
 
 // to delete the project
-Route::delete('/projects/{id}', 'ProjectsController@destroy');
+//Route::delete('/projects/{id}', 'ProjectsController@destroy');
+
+
+
+
+
+// another method to define the routes
+Route::resource('/projects', 'ProjectsController');
+
+
+
+
 
 //Route::get('/', function () {
 //    $tasks = [
