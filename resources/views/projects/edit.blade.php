@@ -24,7 +24,17 @@
 
         <div class="field">
             <div class="control">
-                <button type="submit" class="is-=link">Update Project</button>
+                <button type="submit" class="button is-link">Update Project</button>
+            </div>
+        </div>
+    </form>
+
+    <form method="POST" action="/projects/{{ $project->id }}">
+        {{method_field('DELETE')}}
+        {{csrf_field()}}
+        <div class="field">
+            <div class="control">
+                <button type="submit" class="button">Delete Project</button>
             </div>
         </div>
     </form>

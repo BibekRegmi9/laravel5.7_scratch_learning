@@ -50,7 +50,9 @@ class ProjectsController extends Controller
         return redirect('/projects');
     }
 
-    public function destroy(){
-
+    public function destroy($id){
+//        dd('hello');
+        Project::find($id)->delete();
+        return redirect('/projects');
     }
 }
