@@ -11,7 +11,13 @@
     <h1>All Projects: </h1>
 
 @foreach($projects as $project)
-    <li>{{ $project->title }}</li>
+
+    <li>
+        <a href="/projects/{{$project->id}}">
+        {{ $project->title }}
+        </a>
+    </li>
+
 @endforeach
 </body>
 </html>
