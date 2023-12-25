@@ -11,12 +11,22 @@
 |
 */
 
-Route::get('/', 'PagesController@home');
-Route::get('/about', 'PagesController@about');
-Route::get('/contact', 'PagesController@contact');
+//Route::get('/', 'PagesController@home');
+//Route::get('/about', 'PagesController@about');
+//Route::get('/contact', 'PagesController@contact');
+
+// to get all projects
 Route::get('/projects', 'ProjectsController@index');
-Route::post('/projects', 'ProjectsController@store');
+
+// to get individual projects
+Route::get('/projects/{id}', 'ProjectsController@show');
+
+// to get the view i.e. form. The form will have the post method to submit the form in to the below post route
 Route::get('/projects/create', 'ProjectsController@create');
+
+// to store the projects
+Route::post('/projects', 'ProjectsController@store');
+
 
 
 //Route::get('/', function () {
