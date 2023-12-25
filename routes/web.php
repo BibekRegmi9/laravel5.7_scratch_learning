@@ -27,7 +27,14 @@ Route::get('/projects/create', 'ProjectsController@create');
 // to store the projects
 Route::post('/projects', 'ProjectsController@store');
 
+// to edit the projects
+Route::get('/projects/{id}/edit', 'ProjectsController@edit');
+// to update the edited project
+Route::patch('/projects/{id}', 'ProjectsController@update');
 
+
+// to delete the project
+Route::delete('/projects/{id}', 'ProjectsController@destroy');
 
 //Route::get('/', function () {
 //    $tasks = [
