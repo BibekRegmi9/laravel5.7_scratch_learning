@@ -37,7 +37,7 @@ class ProjectsController extends Controller
     }
 
     public function edit(){
-
+        return view('projects.edit');
     }
 
     public function update(){
