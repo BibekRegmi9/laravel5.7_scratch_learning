@@ -25,35 +25,65 @@ class ProjectsController extends Controller
 
 
         //  Method 1:
-        $project = new Project();
-        $project->title = request('title');
-        $project->description = request('description');
-        $project->save();
+//        $project = new Project();
+//        $project->title = request('title');
+//        $project->description = request('description');
+//        $project->save();
+//        return redirect('/projects');
+
+        // Method 2  (Note: we also have to define mass assignment in the model)
+//        Project::create([
+//            'title' => request('title'),
+//            'description' => request('description')
+//        ]);
+//        return redirect('/projects');
+
+
+        // Method 3
+//        Project::create(request()->all());
+//        return redirect('/projects');
+
+
+        // Method 4 (Best method)
+        Project::create(request(['title', 'description']));
         return redirect('/projects');
+
     }
 
-    public function show($id){
-        $project = Project::findOrFail($id);
+
+
+    public function show(Project $project){
+
+        // Method 1
+
         return view('projects.show', compact('project'));
+
+
+
     }
 
-    public function edit($id){
+    public function edit(Project $project){
 //        return $id;
-        $project = Project::find($id);
+
         return view('projects.edit', compact('project'));
     }
 
-    public function update($id){
-        $project = Project::find($id);
-        $project->title = request('title');
-        $project->description = request('description');
-        $project->save();
+    public function update(Project $project){
+
+        // Method 1
+//        $project->title = request('title');
+//        $project->description = request('description');
+//        $project->save();
+//        return redirect('/projects');
+
+        // Method 2: Best Method
+        $project->update(request(['title', 'description']));
         return redirect('/projects');
     }
 
-    public function destroy($id){
+    public function destroy(Project $project){
 //        dd('hello');
-        Project::find($id)->delete();
+        $project->delete();
         return redirect('/projects');
     }
 }
