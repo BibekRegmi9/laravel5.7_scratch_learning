@@ -47,7 +47,7 @@ class ProjectsController extends Controller
         // Method 4 (Best method)
         // also using validation
         request()->validate([
-            'title' => 'required',
+            'title' => ['required','min:3'],
             'description' => 'required'
         ]);
         Project::create(request(['title', 'description']));

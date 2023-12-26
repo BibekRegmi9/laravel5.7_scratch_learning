@@ -19,6 +19,7 @@
 <div>
     <textarea name="description" placeholder="Project Description: " required>
 
+
     </textarea>
 </div>
     <button type="submit">Create Project</button>
