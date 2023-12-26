@@ -11,7 +11,7 @@
 |
 */
 
-//Route::get('/', 'PagesController@home');
+Route::get('/', 'PagesController@welcome');
 //Route::get('/about', 'PagesController@about');
 //Route::get('/contact', 'PagesController@contact');
 
@@ -42,6 +42,7 @@
 
 // another method to define the routes
 Route::resource('/projects', 'ProjectsController');
+Route::post('/projects/{project}/tasks', 'ProjectTasksContoller@store');
 Route::patch('/tasks/{task}', 'ProjectTasksController@update');
 
 
