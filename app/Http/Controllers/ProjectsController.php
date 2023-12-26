@@ -73,6 +73,8 @@ class ProjectsController extends Controller
             'title' => ['required','min:3'],
             'description' => 'required'
         ]);
+//
+        $validated['owner_id'] = auth()->id();
         Project::create($validated);
         return redirect('/projects');
     }
