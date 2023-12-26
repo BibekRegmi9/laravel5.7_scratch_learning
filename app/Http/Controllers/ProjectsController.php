@@ -45,6 +45,11 @@ class ProjectsController extends Controller
 
 
         // Method 4 (Best method)
+        // also using validation
+        request()->validate([
+            'title' => 'required',
+            'description' => 'required'
+        ]);
         Project::create(request(['title', 'description']));
         return redirect('/projects');
 
