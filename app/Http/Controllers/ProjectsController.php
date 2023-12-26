@@ -46,13 +46,20 @@ class ProjectsController extends Controller
 
         // Method 4 (Best method)
         // also using validation
-        request()->validate([
+//        request()->validate([
+//            'title' => ['required','min:3'],
+//            'description' => 'required'
+//        ]);
+//        Project::create(request(['title', 'description']));
+//        return redirect('/projects');
+
+        // Here validate returns the validated data so we store the validated data inside variable and pass that variable to the Project::create body
+        $validated = request()->validate([
             'title' => ['required','min:3'],
             'description' => 'required'
         ]);
-        Project::create(request(['title', 'description']));
+        Project::create($validated);
         return redirect('/projects');
-
     }
 
 
