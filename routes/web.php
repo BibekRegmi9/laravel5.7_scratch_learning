@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Filesystem\Filesystem;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,7 +12,9 @@
 |
 */
 
-Route::get('/', 'PagesController@welcome');
+Route::get('/', function(){
+    dd(app(Filesystem::class));
+});
 //Route::get('/about', 'PagesController@about');
 //Route::get('/contact', 'PagesController@contact');
 
