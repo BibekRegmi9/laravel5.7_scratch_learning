@@ -18,4 +18,11 @@ class Project extends Model
 //    protected $guarded = [
 //
 //    ];
+
+
+// defining the relationship with tasks
+    public function tasks(){
+        return $this-> hasMany(Task::class);
+    }
+
 }
