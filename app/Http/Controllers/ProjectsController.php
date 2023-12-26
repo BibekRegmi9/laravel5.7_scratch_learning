@@ -7,15 +7,26 @@ use Illuminate\Http\Request;
 
 class ProjectsController extends Controller
 {
-    //
+
+
+    //using middleware to auth every functions defines in this class (ex: index, show, create ,store)
+    public function __construct()
+    {
+        $this->middleware('auth');
+
+        // to apply auth to specific function
+//        $this->middleware('auth')->only(['store', 'show', 'index']);
+    }
+
 
     public function index(){
-        $projects = Project::all();
-        return view('projects.index', compact('projects'));
+
+//        $projects = Project::all();
+//        return view('projects.index', compact('projects'));
 
         // with authorization
-
         $projects = Project::where('owner_id', auth()->id()->get());
+        return view('projects.index', compact('projects'));
     }
 
 
