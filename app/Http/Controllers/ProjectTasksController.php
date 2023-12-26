@@ -11,16 +11,18 @@ class ProjectTasksController extends Controller
     // Method: 1
     public function store(Project $project){
         // method 1:
-        Task::create([
-            'project_id' => $project->id,
-            'description' => request('description')
-        ]);
-        return back();
+//        Task::create([
+//            'project_id' => $project->id,
+//            'description' => request('description')
+//        ]);
+//        return back();
 
 
 
         // Method 2:
-
+        $validate = request()->validate(['description' => 'required']);
+        $project -> addTask($validate);
+        return back();
     }
 
     public function update(Task $task){

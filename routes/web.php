@@ -42,6 +42,8 @@ Route::get('/', 'PagesController@welcome');
 
 // another method to define the routes
 Route::resource('/projects', 'ProjectsController');
+
+
 Route::post('/projects/{project}/tasks', 'ProjectTasksContoller@store');
 Route::patch('/tasks/{task}', 'ProjectTasksController@update');
 

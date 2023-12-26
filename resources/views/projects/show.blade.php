@@ -26,15 +26,18 @@
     </div>
 {{--    @endif--}}
 
-    <form class="field" method="POST" action="/projects/{{$project->id}}/tasks">
+    <form  method="POST" action="/projects/{{$project->id}}/tasks" class="box">
         @csrf
-        <div class="box">
+        <div class="field">
             <label class="label" for="description">New Task:</label>
             <div>
                 <input type="text" class="input" name="description" placeholder="New Task">
             </div>
         </div>
-        <button type="submit">Add Task</button>
+
+        <div class="field">
+            <button type="submit" class="button is-link">Add Task</button>
+        </div>
     </form>
 
 
