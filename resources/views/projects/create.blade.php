@@ -13,11 +13,11 @@
 <form method="POST" action="/projects">
     {{csrf_field()}}
 <div>
-    <input type="text", name="title" placeholder="Project Title: ">
+    <input type="text", name="title" placeholder="Project Title: " required>
 </div>
 
 <div>
-    <textarea name="description" placeholder="Project Description: ">
+    <textarea name="description" placeholder="Project Description: " required>
 
     </textarea>
 </div>
