@@ -42,7 +42,7 @@
 
 // another method to define the routes
 Route::resource('/projects', 'ProjectsController');
-Route::patch('/tasks/{tasks}', 'ProjectTasksController@update');
+Route::patch('/tasks/{task}', 'ProjectTasksController@update');
 
 
 
