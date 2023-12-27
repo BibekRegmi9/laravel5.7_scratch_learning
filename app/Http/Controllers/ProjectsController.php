@@ -80,7 +80,7 @@ class ProjectsController extends Controller
         $validated['owner_id'] = auth()->id();
         $project = Project::create($validated);
 
-        //implementing mail
+        //implementing mail service
         \Mail::to('bibek1@gmail.com')->send(
             new ProjectCreated($project)
         );
