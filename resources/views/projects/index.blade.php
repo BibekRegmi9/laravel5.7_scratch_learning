@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Projects</title>
+    <link rel="stylesheet" type="text/css" href="/css/app.css">
 </head>
 <body>
     <h1>All Projects: </h1>
@@ -19,5 +20,6 @@
     </li>
 
 @endforeach
+    <script src="/js/app.js"></script>
 </body>
 </html>
