@@ -20,6 +20,12 @@ class Project extends Model
 //    ];
 
 
+//defining relationship with user(project belongs to owner)
+public function owner(){
+    return $this->belongsTo(User::class);
+}
+
+
 // defining the relationship with tasks
     public function tasks(){
         return $this-> hasMany(Task::class);
