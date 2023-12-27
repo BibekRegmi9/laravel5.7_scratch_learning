@@ -24,12 +24,14 @@ class ProjectsController extends Controller
 
     public function index(){
 
-//        $projects = Project::all();
-//        return view('projects.index', compact('projects'));
+        $projects = Project::all();
+        return view('projects.index', compact('projects'));
+
+
 
         // with authorization
-        $projects = Project::where('owner_id', auth()->id()->get());
-        return view('projects.index', compact('projects'));
+//        $projects = Project::where('owner_id', auth()->id());
+//        return view('projects.index', compact('projects'));
     }
 
 

@@ -10,7 +10,7 @@ class Project extends Model
 
  // Method 1
     protected $fillable = [
-        'title', 'description'
+        'title', 'description','owner_id'
     ];
 
 
@@ -39,3 +39,4 @@ class Project extends Model
     }
 
 }
+
