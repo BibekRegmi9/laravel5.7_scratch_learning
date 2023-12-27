@@ -13,7 +13,7 @@ use Illuminate\Filesystem\Filesystem;
 */
 
 Route::get('/', function(){
-    dd(app(Filesystem::class));
+    return view('welcome');
 });
 //Route::get('/about', 'PagesController@about');
 //Route::get('/contact', 'PagesController@contact');
