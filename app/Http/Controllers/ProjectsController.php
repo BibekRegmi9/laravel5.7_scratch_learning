@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Events;
 use App\Mail\ProjectCreated;
 use App\Project;
 
@@ -85,6 +85,9 @@ class ProjectsController extends Controller
 //
         $validated['owner_id'] = auth()->id();
         $project = Project::create($validated);
+
+        // to make an event(ignore this if you are not implementing event)
+        event(new ProjectCreated($project));
 
         //implementing mail service
         \Mail::to('bibek1@gmail.com')->send(
