@@ -90,7 +90,7 @@ class ProjectsController extends Controller
 //        return view('projects.show', compact('project'));
 
         // method 2 using policy
-        $this->authorize('view', $project);
+        $this->authorize('update', $project);
 
         return view('projects.show', compact('project'));
 
